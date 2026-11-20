@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.resolve(process.env.LEADS_FILE || "./data/leads.json");
 app.use(express.json({ limit: "32kb" }));
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, "public")));
 
 const systemPrompt = `You are a warm, natural, concise international patient concierge for a medical-travel enquiry service in Türkiye.
 Your role is to understand a visitor's broad enquiry and guide them to submit contact details for a human patient coordinator.
